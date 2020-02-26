@@ -44,10 +44,14 @@ namespace Image_Converter
                 System.Console.WriteLine("statusCode: " + statusCode + " dataLength: "+dataLength);
                 var ImageData = new byte[dataLength];
                 Marshal.Copy(data, ImageData, 0, dataLength);
+		System.Console.WriteLine("\nWrite OUT.jpg\n");
                 //Marshal.FreeHGlobal(data);
                 MemoryStream ms = new MemoryStream(ImageData);
+		System.Console.WriteLine("\nWrite OUT.jpg\n");
                 Image returnImage = Image.FromStream(ms);
-                returnImage.Save("OUT.png",ImageFormat.Jpeg);
+		System.Console.WriteLine("\nWrite OUT.jpg\n");
+                returnImage.Save("OUT.jpg",ImageFormat.Jpeg);
+		System.Console.WriteLine("\nWrite OUT.jpg\n");
                 //Bitmap bmp = new Bitmap(1920, 1080);
                 // for (int y = 0; y < 1080; ++y)
                 //     for (int x = 0; x < 1920; ++x)
@@ -65,6 +69,7 @@ namespace Image_Converter
             catch (Exception Error)
             {
                 Console.WriteLine(Error);
+		System.Console.WriteLine("\nWrite OUT.jpg\n");
 
             }
         }

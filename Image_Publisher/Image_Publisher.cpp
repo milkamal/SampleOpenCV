@@ -1,14 +1,13 @@
-#include <stdio.h>
-
-#include <iostream>
-#include "Image_Publisher.h"
-#include "cv.h"
-#include "highgui.h"
-#include "opencv2/imgproc/imgproc.hpp"
+#include <cv.h>
+#include <highgui.h>
+#include <opencv2/imgproc/imgproc.hpp>
 #include <stdio.h>
 #include "opencv2/imgcodecs.hpp"
 #include "opencv2/highgui.hpp"
 #include "opencv2/imgproc.hpp"
+#include "Image_Publisher.h"
+
+#include <iostream>
 
 using namespace std;
 using namespace cv;
@@ -54,7 +53,6 @@ void SetSubscriber(publish_delegate callback)
 	cout << "Inside";
 	_publish_callback = callback;
 	//read_test_image();
-/*
   Mat_<Vec3b> img(240, 320, Vec3b(0,255,0));
 
  for(int i = 0; i < 100; i++)
@@ -68,6 +66,5 @@ void SetSubscriber(publish_delegate callback)
 
 	cout << "_image_data.size() :" ;
 	Size imgSize =  img.size();
-	_publish_callback(200, imgSize.area(), &img);
-	*/
+	_publish_callback(400, imgSize.area(), &img);
 }
